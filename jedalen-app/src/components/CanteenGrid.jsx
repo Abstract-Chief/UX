@@ -53,7 +53,7 @@ const CanteenGrid = ({ selectedDay }) => {
       name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
       status: t.canteen.status.closed,
-      statusColor: 'orange',
+      statusColor: 'green',
       image: '/img/banners/5.jpeg',
       meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     },
@@ -71,7 +71,7 @@ const CanteenGrid = ({ selectedDay }) => {
       name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
       status: t.canteen.status.closed,
-      statusColor: 'orange',
+      statusColor: 'red',
       image: '/img/banners/7.jpeg',
       meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     }

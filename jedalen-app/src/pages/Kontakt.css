@@ -32,7 +32,7 @@
 @media (max-width: 1024px) {
   .kontakt-container {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 30px;
   }
 
   .contacts-section {
@@ -43,12 +43,24 @@
 
   .form-section {
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .kontakt-content {
     padding: 24px 16px;
+  }
+
+  .kontakt-container {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt-content {
+    padding: 20px 12px;
   }
 
   .kontakt-container {

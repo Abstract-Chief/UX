@@ -10,16 +10,42 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
+}
+
+/* Улучшение touch-интерфейса */
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Скрытие скроллбаров в мобильной версии для горизонтальных элементов */
+@media (max-width: 768px) {
+  .menu-categories::-webkit-scrollbar,
+  .week-selector::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .menu-categories,
+  .week-selector {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 }

@@ -35,6 +35,17 @@
   gap: 1.5rem;
 }
 
+@media (max-width: 1024px) {
+  .canteen-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.35rem;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+}
+
 @media (max-width: 768px) {
   .canteen-section {
     margin-top: 1.5rem;
@@ -70,5 +81,9 @@
 
   .section-subtitle {
     font-size: 0.9rem;
+  }
+
+  .canteen-grid {
+    gap: 1rem;
   }
 }

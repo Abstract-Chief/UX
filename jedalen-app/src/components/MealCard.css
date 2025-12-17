@@ -76,3 +76,69 @@
   color: #000;
   font-family: 'Roboto', sans-serif;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .meal-image {
+    height: 180px;
+  }
+  
+  .meal-info {
+    padding: 0.85rem 1rem 1rem;
+  }
+  
+  .meal-name {
+    font-size: 1.15rem;
+    margin: 0 0 0.85rem 0;
+  }
+  
+  .meal-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .meal-portion {
+    font-size: 0.95rem;
+  }
+  
+  .meal-price {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .meal-image {
+    height: 160px;
+  }
+  
+  .meal-info {
+    padding: 0.75rem 0.85rem 0.85rem;
+  }
+  
+  .meal-name {
+    font-size: 1.05rem;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.25;
+  }
+  
+  .meal-footer-left {
+    gap: 0.5rem;
+  }
+  
+  .meal-icons {
+    gap: 0.4rem;
+  }
+  
+  .meal-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .meal-portion {
+    font-size: 0.9rem;
+  }
+  
+  .meal-price {
+    font-size: 1rem;
+  }
+}

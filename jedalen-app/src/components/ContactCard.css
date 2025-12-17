@@ -65,6 +65,12 @@
   overflow-wrap: break-word;
 }
 
+@media (max-width: 1024px) {
+  .contact-card {
+    padding: 22px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-card {
     padding: 20px;
@@ -77,5 +83,50 @@
 
   .contact-name {
     font-size: 16px;
+  }
+
+  .contact-title {
+    font-size: 12px;
+  }
+
+  .contact-label,
+  .contact-value {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 16px;
+  }
+
+  .contact-header {
+    gap: 12px;
+  }
+
+  .contact-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .contact-name {
+    font-size: 15px;
+  }
+
+  .contact-title {
+    font-size: 11px;
+  }
+
+  .contact-label {
+    font-size: 12px;
+    min-width: 65px;
+  }
+
+  .contact-value {
+    font-size: 12px;
+  }
+
+  .contact-details {
+    gap: 10px;
   }
 }

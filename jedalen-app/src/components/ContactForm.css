@@ -136,6 +136,12 @@
   max-width: 400px;
 }
 
+@media (max-width: 1024px) {
+  .contact-form-container {
+    padding: 28px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-form-container {
     padding: 24px;
@@ -150,6 +156,10 @@
     font-size: 20px;
   }
 
+  .form-header {
+    margin-bottom: 24px;
+  }
+
   .success-icon svg {
     width: 48px;
     height: 48px;
@@ -157,5 +167,46 @@
 
   .success-title {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+  .form-subtitle {
+    font-size: 13px;
+  }
+
+  .form-header {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .submit-button {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .success-title {
+    font-size: 18px;
+  }
+
+  .success-text {
+    font-size: 13px;
   }
 }

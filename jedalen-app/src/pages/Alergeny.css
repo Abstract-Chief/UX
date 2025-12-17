@@ -67,6 +67,16 @@
   font-weight: 500;
 }
 
+@media (max-width: 1024px) {
+  .alergeny-container {
+    padding: 28px 20px;
+  }
+
+  .allergens-grid {
+    gap: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .allergens-grid {
     grid-template-columns: 1fr;
@@ -78,5 +88,40 @@
 
   .alergeny-intro {
     font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .allergen-card {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .alergeny-container {
+    padding: 20px 12px;
+  }
+
+  .alergeny-intro {
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  .allergen-card {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .allergen-number {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+
+  .allergen-icon {
+    font-size: 18px;
+  }
+
+  .allergen-name {
+    font-size: 13px;
   }
 }

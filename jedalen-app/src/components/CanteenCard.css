@@ -131,16 +131,89 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .card-image {
-    height: 220px;
-  }
-
-  .card-content {
-    padding: 1rem;
+    height: 240px;
   }
 
   .canteen-name {
-    font-size: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .card-content hr {
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-image {
+    height: 130px;
+  }
+
+  .card-content {
+    padding: 0.85rem;
+  }
+
+  .canteen-name {
+    font-size: 1.4rem;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    margin-top: 8px;
+  }
+
+  .opening-hours {
+    font-size: 0.8rem;
+    margin-top: -0.75rem;
+  }
+
+  .meals-info {
+    font-size: 0.875rem;
+  }
+
+  .card-content hr {
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image {
+    height: 120px;
+  }
+
+  .card-content {
+    padding: 0.75rem;
+  }
+
+  .canteen-name {
+    font-size: 1.2rem;
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .opening-hours {
+    font-size: 0.75rem;
+  }
+
+  .meals-info {
+    font-size: 0.8rem;
+  }
+
+  .card-content hr {
+    margin-top: 12%;
+  }
+
+  .canteen-card:hover .meals-info {
+    margin-left: 35%;
+  }
+
+  .canteen-card:hover hr {
+    width: 65%;
+    margin-left: 35%;
   }
 }
