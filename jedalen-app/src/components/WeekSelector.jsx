@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './WeekSelector.css';
 
-const WeekSelector = () => {
+const WeekSelector = ({ selectedDay, onDayChange }) => {
   const days = [
     { name: 'Utorok', date: '25.11.2025' },
     { name: 'Streda', date: '26.11.2025' },
@@ -12,15 +12,13 @@ const WeekSelector = () => {
     { name: 'Streda', date: '3.12.2025' }
   ];
 
-  const [selectedDay, setSelectedDay] = useState(0);
-
   return (
     <div className="week-selector">
       {days.map((day, index) => (
         <button
           key={index}
-          className={`day-button ${selectedDay === index ? 'active' : ''}`}
-          onClick={() => setSelectedDay(index)}
+          className={`day-button ${selectedDay.date === day.date ? 'active' : ''}`}
+          onClick={() => onDayChange(day)}
         >
           <div className="day-name">{day.name}</div>
           <div className="day-date">{day.date}</div>

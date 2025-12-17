@@ -5,12 +5,12 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
+        <a href="/" className="logo">
           <div className="logo-icon">
             <img src="/img/logo.png" alt="TUKE Logo" />
           </div>
           <span className="logo-text">Jedalen.tuke</span>
-        </div>
+        </a>
         
         <nav className="nav">
           <a href="/alergeny" className="nav-link">Alergény</a>

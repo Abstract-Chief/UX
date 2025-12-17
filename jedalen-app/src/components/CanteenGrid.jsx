@@ -2,7 +2,7 @@ import React from 'react';
 import CanteenCard from './CanteenCard';
 import './CanteenGrid.css';
 
-const CanteenGrid = () => {
+const CanteenGrid = ({ selectedDay }) => {
   const canteens = [
     {
       id: 1,
@@ -74,7 +74,7 @@ const CanteenGrid = () => {
       <div className="section-header">
         <h2 className="section-title">Jedálny lístok</h2>
         <span className="section-divider">-</span>
-        <p className="section-subtitle">Utorok (25.11.2025)</p>
+        <p className="section-subtitle">{selectedDay.name} ({selectedDay.date})</p>
       </div>
       <div className="canteen-grid">
         {canteens.map(canteen => (
