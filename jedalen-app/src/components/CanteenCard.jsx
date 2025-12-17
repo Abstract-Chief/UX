@@ -11,7 +11,6 @@ const CanteenCard = ({ name, hours, status, statusColor, image, meals }) => {
             <h3 className="canteen-name">{name}</h3>
             <span className={`status-badge ${statusColor}`}>{status}</span>
           </div>
-          <p className="opening-hours">Otvorné dnes: {hours}</p>
           <hr/>
           <p className="meals-info">{meals}</p>
         </div>

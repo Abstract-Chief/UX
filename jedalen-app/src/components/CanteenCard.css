@@ -13,6 +13,28 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
+.canteen-card:hover .card-header {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.2rem 0.45rem;
+  background: rgba(255, 255, 255, 0.801);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.canteen-card:hover .meals-info {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  margin-left: 40%;
+}
+.canteen-card:hover hr {
+  height: 1px;
+  width: 60%;
+  margin-left: 40%;
+  background: #ffffff;
+  transition: background 0.3s ease;
+}
+
 .card-image {
   position: relative;
   width: 100%;
