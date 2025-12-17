@@ -29,7 +29,17 @@ export const translations = {
         closed: 'Zatvorené',
         opening_soon: 'Čoskoro otvorené'
       },
-      meals: 'jedlá'
+      meals: 'jedlá',
+      names: [
+        'Jedáleň Němcovej 1',
+        'Jedáleň Letná',
+        'Jedáleň Park Komenského',
+        'Jedáleň Watsonova',
+        'Jedáleň Jesenná',
+        'Jedáleň Bayerova',
+        'Jedáleň Mlynská'
+      ],
+      mealsAvailable: 'Dnes ${count} hlavné jedlá na výber'
     },
     
     // Menu page
@@ -177,7 +187,17 @@ export const translations = {
         closed: 'Closed',
         opening_soon: 'Opening soon'
       },
-      meals: 'meals'
+      meals: 'meals',
+      names: [
+        'Canteen Němcovej 1',
+        'Canteen Letná',
+        'Canteen Park Komenského',
+        'Canteen Watsonova',
+        'Canteen Jesenná',
+        'Canteen Bayerova',
+        'Canteen Mlynská'
+      ],
+      mealsAvailable: 'Today ${count} main meals available'
     },
     
     // Menu page
