@@ -3,13 +3,16 @@ import CanteenCard from './CanteenCard';
 import './CanteenGrid.css';
 
 const CanteenGrid = ({ selectedDay }) => {
+  // Check if selected day is Saturday or Sunday
+  const isWeekend = selectedDay.name === 'Sobota' || selectedDay.name === 'Nedeľa';
+  
   const canteens = [
     {
       id: 1,
       name: 'Jedáleň Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Otvorené',
-      statusColor: 'green',
+      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/1.jpg',
       meals: 'Dnes 3 hlavné jedlá na výber'
     },
@@ -17,8 +20,8 @@ const CanteenGrid = ({ selectedDay }) => {
       id: 2,
       name: 'Jedáleň Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Otvorené',
-      statusColor: 'green',
+      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/2.jpeg',
       meals: 'Dnes 4 hlavné jedlá na výber'
     },
@@ -26,8 +29,8 @@ const CanteenGrid = ({ selectedDay }) => {
       id: 3,
       name: 'Jedáleň Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Otvorené',
-      statusColor: 'green',
+      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/3.jpeg',
       meals: 'Dnes 3 hlavné jedlá na výber'
     },
@@ -35,8 +38,8 @@ const CanteenGrid = ({ selectedDay }) => {
       id: 4,
       name: 'Jedáleň Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Otvorené',
-      statusColor: 'green',
+      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/4.jpeg',
       meals: 'Dnes 3 hlavné jedlá na výber'
     },
