@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import WeekSelector from './components/WeekSelector'
+import CanteenGrid from './components/CanteenGrid'
 import './App.css'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main className="main-content">
         <WeekSelector />
+        <CanteenGrid />
       </main>
     </div>
   )

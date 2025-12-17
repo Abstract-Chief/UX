@@ -1,0 +1,74 @@
+.canteen-section {
+  margin-top: 2rem;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #003D8D;
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.section-divider {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.canteen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .canteen-section {
+    margin-top: 1.5rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .section-divider {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .canteen-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+}
