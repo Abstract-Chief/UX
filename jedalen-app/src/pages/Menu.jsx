@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../locales/translations';
+import MealCard from '../components/MealCard';
 import './Menu.css';
 
 // Sample meal data generator
@@ -152,6 +153,23 @@ const Menu = () => {
             </button>
           </div>
           
+          <div className="menu-filters">
+            <button 
+              className={`filter-btn ${showVegan ? 'active' : ''}`}
+              onClick={() => setShowVegan(!showVegan)}
+            >
+              <img src="/img/icons/vegan.svg" alt="Vegan" className="filter-icon" />
+              {t.menu.filters.vegan}
+            </button>
+            <button 
+              className={`filter-btn ${showGlutenFree ? 'active' : ''}`}
+              onClick={() => setShowGlutenFree(!showGlutenFree)}
+            >
+              <img src="/img/icons/gluten.svg" alt="Gluten Free" className="filter-icon" />
+              {t.menu.filters.glutenFree}
+            </button>
+          </div>
+          
           <div className="menu-day-selector-mobile">
             <div className="menu-dropdown">
               <select 
@@ -171,19 +189,11 @@ const Menu = () => {
       <main className="menu-content">
         <div className="meals-grid">
           {filteredMeals.map(meal => (
-            <div key={meal.id} className="meal-card">
-              <div className="meal-image">
-                <img src={meal.image} alt={meal.name} />
-              </div>
-              <div className="meal-info">
-                <h3 className="meal-name">{meal.name}</h3>
-                {meal.vegan && <span className="meal-badge vegan">🌱 {t.menu.filters.vegan}</span>}
-                <div className="meal-footer">
-                  {meal.portion && <span className="meal-portion">{meal.portion}</span>}
-                  <span className="meal-price">{meal.price}</span>
-                </div>
-              </div>
-            </div>
+            <MealCard 
+              key={meal.id} 
+              meal={meal}
+              veganLabel={t.menu.filters.vegan}
+            />
           ))}
         </div>
       </main>
