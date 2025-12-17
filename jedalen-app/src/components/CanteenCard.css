@@ -42,7 +42,13 @@
   background: rgba(153, 153, 153, 0.1);
   z-index: 1;
 }
-
+.card-content hr {
+  border: none;
+  margin-top: 30%;
+  background: rgb(0, 0, 0);
+  height: 2px;
+  border-top: 1px solid #e5e7eb;
+}
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -92,8 +98,8 @@
 }
 
 .meals-info {
-  font-size: 0.875rem;
-  color: #d1d5db;
+  font-size: 0.975rem;
+  color: #474747;
   margin: 0;
 }
 
