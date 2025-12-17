@@ -1,14 +1,19 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 import Header from '../components/Header';
 import ContactCard from '../components/ContactCard';
 import ContactForm from '../components/ContactForm';
 import './Kontakt.css';
 
 const Kontakt = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
+  
   const contacts = [
     {
       image: '/img/person2.jpg',
-      title: 'Vedúca úseku stravovacích služieb',
+      title: t.position1,
       name: 'Ing. Aneta Jurík',
       phone: '+421 55 602 5813',
       mobile: '+421 917 751 407',
@@ -16,7 +21,7 @@ const Kontakt = () => {
     },
     {
       image: '/img/person.jpg',
-      title: 'Asistentka kancel a sektora kontroly',
+      title: t.position2,
       name: 'Ing. Aneta Jurík',
       phone: '+421 55 602 5813',
       mobile: null,

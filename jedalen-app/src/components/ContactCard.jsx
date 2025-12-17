@@ -1,7 +1,12 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 import './ContactCard.css';
 
 const ContactCard = ({ image, title, name, phone, mobile, email }) => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
+  
   return (
     <div className="contact-card">
       <div className="contact-header">
@@ -13,17 +18,17 @@ const ContactCard = ({ image, title, name, phone, mobile, email }) => {
       </div>
       <div className="contact-details">
         <div className="contact-row">
-          <span className="contact-label">Telefón:</span>
+          <span className="contact-label">{t.phone}:</span>
           <span className="contact-value">{phone}</span>
         </div>
         {mobile && (
           <div className="contact-row">
-            <span className="contact-label">Mobil:</span>
+            <span className="contact-label">{t.mobile}:</span>
             <span className="contact-value">{mobile}</span>
           </div>
         )}
         <div className="contact-row">
-          <span className="contact-label">E-mail:</span>
+          <span className="contact-label">{t.email}:</span>
           <span className="contact-value">{email}</span>
         </div>
       </div>

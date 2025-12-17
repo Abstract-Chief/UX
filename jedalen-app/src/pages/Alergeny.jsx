@@ -1,23 +1,28 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 import Header from '../components/Header';
 import './Alergeny.css';
 
 const Alergeny = () => {
+  const { language } = useLanguage();
+  const t = translations[language].allergens;
+
   const allergens = [
-    { id: 1, icon: '🌾', name: 'Obilniny obsahujúce lepok' },
-    { id: 2, icon: '🦐', name: 'Kôrovce a výrobky z nich' },
-    { id: 3, icon: '🥚', name: 'Vajcia a výrobky z nich' },
-    { id: 4, icon: '🐟', name: 'Ryby a výrobky z nich' },
-    { id: 5, icon: '🥜', name: 'Arašidy a výrobky z nich' },
-    { id: 6, icon: '🫘', name: 'Sójové zrná a výrobky z nich' },
-    { id: 7, icon: '🥛', name: 'Mlieko a výrobky z neho' },
-    { id: 8, icon: '🌰', name: 'Orechy a výrobky z nich' },
-    { id: 9, icon: '🥬', name: 'Zeler a výrobky z neho' },
-    { id: 10, icon: '🌭', name: 'Horčica a výrobky z nej' },
-    { id: 11, icon: '🌱', name: 'Sezamové semená a výrobky z nich' },
-    { id: 12, icon: '🧪', name: 'Oxid siričitý a siričitany' },
-    { id: 13, icon: '🫛', name: 'Vlčí bôb a výrobky z neho' },
-    { id: 14, icon: '🦪', name: 'Mäkkýše a výrobky z nich' }
+    { id: 1, icon: '🌾', name: t.list[1] },
+    { id: 2, icon: '🦐', name: t.list[2] },
+    { id: 3, icon: '🥚', name: t.list[3] },
+    { id: 4, icon: '🐟', name: t.list[4] },
+    { id: 5, icon: '🥜', name: t.list[5] },
+    { id: 6, icon: '🫘', name: t.list[6] },
+    { id: 7, icon: '🥛', name: t.list[7] },
+    { id: 8, icon: '🌰', name: t.list[8] },
+    { id: 9, icon: '🥬', name: t.list[9] },
+    { id: 10, icon: '🌭', name: t.list[10] },
+    { id: 11, icon: '🌱', name: t.list[11] },
+    { id: 12, icon: '🧪', name: t.list[12] },
+    { id: 13, icon: '🫛', name: t.list[13] },
+    { id: 14, icon: '🦪', name: t.list[14] }
   ];
 
   return (
@@ -26,15 +31,8 @@ const Alergeny = () => {
       
       <div className="alergeny-container">
         <div className="alergeny-intro">
-          <p>
-            Z nových legislatívnych predpisov a výnosu MP SR a MZ SR č. 1187/2004 vyplýva zariadeniam 
-            spoločného stravovania povinnosť označovať prítomnosť alergénov uvádzaných do obehu pre 
-            konečného spotrebiteľa.
-          </p>
-          <p>
-            V zmysle hore uvedených pokynov sú pri jedlách v ponuke označené číslom alergény 
-            nachádzajúce sa v jedle, podľa nasledovného zoznamu:
-          </p>
+          <p>{t.intro1}</p>
+          <p>{t.intro2}</p>
         </div>
 
         <div className="allergens-grid">

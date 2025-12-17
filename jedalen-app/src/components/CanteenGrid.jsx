@@ -1,81 +1,86 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 import CanteenCard from './CanteenCard';
 import './CanteenGrid.css';
 
 const CanteenGrid = ({ selectedDay }) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   // Check if selected day is Saturday or Sunday
-  const isWeekend = selectedDay.name === 'Sobota' || selectedDay.name === 'Nedeľa';
+  const isWeekend = selectedDay.key === 'saturday' || selectedDay.key === 'sunday';
   
   const canteens = [
     {
       id: 1,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      status: isWeekend ? t.canteen.status.closed : t.canteen.status.open,
       statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/1.jpg',
-      meals: 'Dnes 3 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     },
     {
       id: 2,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      status: isWeekend ? t.canteen.status.closed : t.canteen.status.open,
       statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/2.jpeg',
-      meals: 'Dnes 4 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 4 hlavné jedlá na výber' : 'Today 4 main meals available'
     },
     {
       id: 3,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      status: isWeekend ? t.canteen.status.closed : t.canteen.status.open,
       statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/3.jpeg',
-      meals: 'Dnes 3 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     },
     {
       id: 4,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: isWeekend ? 'Zatvorené' : 'Otvorené',
+      status: isWeekend ? t.canteen.status.closed : t.canteen.status.open,
       statusColor: isWeekend ? 'red' : 'green',
       image: '/img/banners/4.jpeg',
-      meals: 'Dnes 3 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     },
     {
       id: 5,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Zatvorené',
+      status: t.canteen.status.closed,
       statusColor: 'orange',
       image: '/img/banners/5.jpeg',
-      meals: 'Dnes 3 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     },
     {
       id: 6,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Zatvorené',
+      status: t.canteen.status.closed,
       statusColor: 'red',
       image: '/img/banners/6.jpeg',
-      meals: 'Dnes 3 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 3 hlavné jedlá на výber' : 'Today 3 main meals available'
     },
     {
       id: 7,
-      name: 'Jedáleň Němcovej 1',
+      name: language === 'sk' ? 'Jedáleň Němcovej 1' : 'Canteen Němcovej 1',
       hours: '11:00 - 14:00',
-      status: 'Zatvorené',
+      status: t.canteen.status.closed,
       statusColor: 'orange',
       image: '/img/banners/7.jpeg',
-      meals: 'Dnes 3 hlavné jedlá na výber'
+      meals: language === 'sk' ? 'Dnes 3 hlavné jedlá na výber' : 'Today 3 main meals available'
     }
   ];
 
   return (
     <div className="canteen-section">
       <div className="section-header">
-        <h2 className="section-title">Jedálny lístok</h2>
+        <h2 className="section-title">{language === 'sk' ? 'Jedálny lístok' : 'Menu'}</h2>
         <span className="section-divider">-</span>
         <p className="section-subtitle">{selectedDay.name} ({selectedDay.date})</p>
       </div>

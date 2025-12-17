@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 import Header from '../components/Header';
 import WeekSelector from '../components/WeekSelector';
 import CanteenGrid from '../components/CanteenGrid';
 import './Home.css';
 
 const Home = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const [selectedDay, setSelectedDay] = useState({
-    name: 'Utorok',
-    date: '25.11.2025'
+    name: t.days.tuesday,
+    date: '25.11.2025',
+    key: 'tuesday'
   });
 
   return (

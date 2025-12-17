@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 import './ContactForm.css';
 
 const ContactForm = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact.form;
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,15 +50,15 @@ const ContactForm = () => {
               <path d="M20 32L28 40L44 24" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <h2 className="success-title">Žiadosť bola odoslaná.</h2>
+          <h2 className="success-title">{t.successTitle}</h2>
           <p className="success-text">
-            Ďakujeme za váš dotaz. Budeme vás kontaktovať v priebehu nasledujúceho pracovného dňa.
+            {t.successMessage}
           </p>
           <button 
             className="submit-button"
             onClick={() => setSubmitted(false)}
           >
-            Odoslať novú správu
+            {language === 'sk' ? 'Odoslať novú správu' : 'Send new message'}
           </button>
         </div>
       </div>
@@ -63,32 +68,32 @@ const ContactForm = () => {
   return (
     <div className="contact-form-wrapper">
       <div className="form-header">
-        <h2 className="form-title">Rýchly kontakt</h2>
-        <p className="form-subtitle">Máte otázku? Napíšte nám správu.</p>
+        <h2 className="form-title">{t.title}</h2>
+        <p className="form-subtitle">{language === 'sk' ? 'Máte otázku? Napíšte nám správu.' : 'Have a question? Write us a message.'}</p>
       </div>
       
       <div className="contact-form-container">
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="name">Meno a priezvisko</label>
+              <label htmlFor="name">{t.name}</label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Vaše meno..."
+                placeholder={t.namePlaceholder}
                 value={formData.name}
                 onChange={handleChange}
                 required
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">E-mail</label>
+              <label htmlFor="email">{t.email}</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="vas@email.sk"
+                placeholder={t.emailPlaceholder}
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -97,12 +102,12 @@ const ContactForm = () => {
           </div>
           
           <div className="form-group">
-            <label htmlFor="subject">Predmet</label>
+            <label htmlFor="subject">{t.subject}</label>
             <input
               type="text"
               id="subject"
               name="subject"
-              placeholder="Téma správy..."
+              placeholder={t.subjectPlaceholder}
               value={formData.subject}
               onChange={handleChange}
               required
@@ -110,11 +115,11 @@ const ContactForm = () => {
           </div>
           
           <div className="form-group">
-            <label htmlFor="message">Správa</label>
+            <label htmlFor="message">{t.message}</label>
             <textarea
               id="message"
               name="message"
-              placeholder="Napíšte vašu správu..."
+              placeholder={t.messagePlaceholder}
               rows="5"
               value={formData.message}
               onChange={handleChange}
@@ -123,7 +128,7 @@ const ContactForm = () => {
           </div>
           
           <button type="submit" className="submit-button">
-            Odoslať správu
+            {t.submit}
           </button>
         </form>
       </div>
