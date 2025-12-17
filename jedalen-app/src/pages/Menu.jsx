@@ -6,64 +6,40 @@ import MealCard from '../components/MealCard';
 import './Menu.css';
 
 // Sample meal data generator
-const generateMeals = (category, count) => {
-  const mainDishes = [
-    { name: 'Kuracie prsia na grile s ryžou', price: '3,80€', portion: null, vegan: false, glutenFree: false, image: '/img/food/1.jpeg' },
-    { name: 'Hovädzí guláš s knedľou', price: '4,20€', portion: null, vegan: false, glutenFree: false, image: '/img/food/2.jpeg' },
-    { name: 'Vyprážaný syr s hranolkami', price: '3,50€', portion: null, vegan: false, glutenFree: false, image: '/img/food/3.jpeg' },
-    { name: 'Pečená kačica s lokšami', price: '4,50€', portion: null, vegan: false, glutenFree: false, image: '/img/food/4.jpeg' },
-    { name: 'Tofu s quinoou a zeleninou', price: '3,80€', portion: null, vegan: true, glutenFree: true, image: '/img/food/5.jpeg' },
-    { name: 'Bravčová rezen s varenými zemiakmi', price: '4,00€', portion: null, vegan: false, glutenFree: false, image: '/img/food/6.jpeg' },
-    { name: 'Kurací perkelt s haluškami', price: '3,90€', portion: null, vegan: false, glutenFree: false, image: '/img/food/7.jpeg' },
-    { name: 'Lasagne bolognese', price: '4,10€', portion: null, vegan: false, glutenFree: false, image: '/img/food/8.jpeg' },
-    { name: 'Pečený losos s brokolicou', price: '5,20€', portion: null, vegan: false, glutenFree: true, image: '/img/food/9.jpeg' },
-    { name: 'Špenátové gnocchi s paradajkovou omáčkou', price: '3,70€', portion: null, vegan: true, glutenFree: false, image: '/img/food/10.jpeg' },
-    { name: 'Hovädzí steak s pečenými zemiakmi', price: '5,50€', portion: null, vegan: false, glutenFree: true, image: '/img/food/11.jpeg' },
-    { name: 'Kurací šalát s caesarovou omáčkou', price: '4,30€', portion: null, vegan: false, glutenFree: false, image: '/img/food/1.jpeg' },
-    { name: 'Zeleninové kari s basmati ryžou', price: '3,60€', portion: null, vegan: true, glutenFree: true, image: '/img/food/2.jpeg' },
-    { name: 'Penne carbonara', price: '3,80€', portion: null, vegan: false, glutenFree: false, image: '/img/food/3.jpeg' },
-    { name: 'Morčacie prsia v hubovej omáčke', price: '4,40€', portion: null, vegan: false, glutenFree: false, image: '/img/food/4.jpeg' }
-  ];
+const generateMeals = (category, count, mealNames) => {
+  const data = mealNames.map((name, index) => {
+    let price, portion, vegan, glutenFree;
+    
+    if (category === 'mainDishes') {
+      price = (Math.random() * 2 + 3.5).toFixed(2) + '€';
+      portion = null;
+      vegan = index === 4 || index === 9 || index === 12; // Some are vegan
+      glutenFree = index === 4 || index === 8 || index === 10 || index === 12; // Some are gluten-free
+    } else if (category === 'soups') {
+      price = (Math.random() * 1 + 2.5).toFixed(2) + '€';
+      portion = '350ml';
+      vegan = index === 1 || index === 5 || index === 7 || index === 11 || index === 13; // Some are vegan
+      glutenFree = index === 1 || index === 5 || index === 7 || index === 8 || index === 11 || index === 13; // Some are gluten-free
+    } else { // salads
+      price = (Math.random() * 1.5 + 2.2).toFixed(2) + '€';
+      portion = null;
+      vegan = index === 0 || index === 6 || index === 7 || index === 8 || index === 9; // Some are vegan
+      glutenFree = index === 0 || index === 3 || index === 4 || index === 5 || index === 6 || index === 7 || index === 8 || index === 9 || index === 11; // Some are gluten-free
+    }
+    
+    return {
+      id: index,
+      name: name,
+      price: price,
+      portion: portion,
+      vegan: vegan,
+      glutenFree: glutenFree,
+      image: `/img/food/${(index % 11) + 1}.jpeg`
+    };
+  });
   
-  const soups = [
-    { name: 'Fazuľová s fliačkami', price: '3,80€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/5.jpeg' },
-    { name: 'Zeleninová polievka', price: '3,80€', portion: '350ml', vegan: true, glutenFree: true, image: '/img/food/6.jpeg' },
-    { name: 'Gulášová polievka', price: '3,80€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/7.jpeg' },
-    { name: 'Zemiaková polievka', price: '3,80€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/8.jpeg' },
-    { name: 'Kurací vývar s rezancami', price: '3,80€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/9.jpeg' },
-    { name: 'Šošovicová polievka', price: '2,50€', portion: '350ml', vegan: true, glutenFree: true, image: '/img/food/10.jpeg' },
-    { name: 'Kapustnica', price: '3,20€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/11.jpeg' },
-    { name: 'Paradajková polievka', price: '2,80€', portion: '350ml', vegan: true, glutenFree: true, image: '/img/food/1.jpeg' },
-    { name: 'Hrachová polievka s klobásou', price: '3,00€', portion: '350ml', vegan: false, glutenFree: true, image: '/img/food/2.jpeg' },
-    { name: 'Kulajda', price: '3,40€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/3.jpeg' },
-    { name: 'Cesnaková polievka', price: '2,90€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/4.jpeg' },
-    { name: 'Minestrone', price: '3,10€', portion: '350ml', vegan: true, glutenFree: true, image: '/img/food/5.jpeg' },
-    { name: 'Hubová polievka', price: '3,30€', portion: '350ml', vegan: false, glutenFree: false, image: '/img/food/6.jpeg' },
-    { name: 'Brokolicová krémová polievka', price: '2,70€', portion: '350ml', vegan: true, glutenFree: true, image: '/img/food/7.jpeg' }
-  ];
-  
-  const salads = [
-    { name: 'Zeleninový šalát', price: '2,50€', portion: null, vegan: true, glutenFree: true, image: '/img/food/8.jpeg' },
-    { name: 'Ťapaný šalát', price: '2,80€', portion: null, vegan: false, glutenFree: false, image: '/img/food/9.jpeg' },
-    { name: 'Cézar šalát', price: '3,20€', portion: null, vegan: false, glutenFree: false, image: '/img/food/10.jpeg' },
-    { name: 'Grécky šalát', price: '3,00€', portion: null, vegan: false, glutenFree: true, image: '/img/food/11.jpeg' },
-    { name: 'Šalát s tuniakom', price: '3,50€', portion: null, vegan: false, glutenFree: true, image: '/img/food/1.jpeg' },
-    { name: 'Šalát Caprese', price: '2,90€', portion: null, vegan: false, glutenFree: true, image: '/img/food/2.jpeg' },
-    { name: 'Quinoa šalát s avokádom', price: '3,80€', portion: null, vegan: true, glutenFree: true, image: '/img/food/3.jpeg' },
-    { name: 'Ovocný šalát', price: '2,40€', portion: null, vegan: true, glutenFree: true, image: '/img/food/4.jpeg' },
-    { name: 'Šalát s pečenou cviklou', price: '3,10€', portion: null, vegan: true, glutenFree: true, image: '/img/food/5.jpeg' },
-    { name: 'Coleslaw', price: '2,20€', portion: null, vegan: true, glutenFree: true, image: '/img/food/6.jpeg' },
-    { name: 'Kurací šalát s jogurtovou zálievkou', price: '3,60€', portion: null, vegan: false, glutenFree: false, image: '/img/food/7.jpeg' },
-    { name: 'Šalát s kozím syrom a orechmi', price: '3,70€', portion: null, vegan: false, glutenFree: true, image: '/img/food/8.jpeg' }
-  ];
-  
-  const data = category === 'mainDishes' ? mainDishes : category === 'soups' ? soups : salads;
   const randomCount = Math.min(count, data.length);
-  
-  return data.slice(0, randomCount).map((meal, index) => ({
-    ...meal,
-    id: index
-  }));
+  return data.slice(0, randomCount);
 };
 
 const Menu = () => {
@@ -84,9 +60,9 @@ const Menu = () => {
   };
   
   const allMeals = {
-    mainDishes: generateMeals('mainDishes', mealCounts.mainDishes),
-    soups: generateMeals('soups', mealCounts.soups),
-    salads: generateMeals('salads', mealCounts.salads)
+    mainDishes: generateMeals('mainDishes', mealCounts.mainDishes, t.menu.meals.mainDishes),
+    soups: generateMeals('soups', mealCounts.soups, t.menu.meals.soups),
+    salads: generateMeals('salads', mealCounts.salads, t.menu.meals.salads)
   };
   
   const currentMeals = allMeals[selectedCategory];

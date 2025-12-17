@@ -45,7 +45,56 @@ export const translations = {
         vegan: 'Vegan',
         glutenFree: 'Bez lepku'
       },
-      portion: 'ml'
+      portion: 'ml',
+      meals: {
+        mainDishes: [
+          'Kuracie prsia na grile s ryžou',
+          'Hovädzí guláš s knedľou',
+          'Vyprážaný syr s hranolkami',
+          'Pečená kačica s lokšami',
+          'Tofu s quinoou a zeleninou',
+          'Bravčová rezen s varenými zemiakmi',
+          'Kurací perkelt s haluškami',
+          'Lasagne bolognese',
+          'Pečený losos s brokolicou',
+          'Špenátové gnocchi s paradajkovou omáčkou',
+          'Hovädzí steak s pečenými zemiakmi',
+          'Kurací šalát s caesarovou omáčkou',
+          'Zeleninové kari s basmati ryžou',
+          'Penne carbonara',
+          'Morčacie prsia v hubovej omáčke'
+        ],
+        soups: [
+          'Fazuľová s fliačkami',
+          'Zeleninová polievka',
+          'Gulášová polievka',
+          'Zemiaková polievka',
+          'Kurací vývar s rezancami',
+          'Šošovicová polievka',
+          'Kapustnica',
+          'Paradajková polievka',
+          'Hrachová polievka s klobásou',
+          'Kulajda',
+          'Cesnaková polievka',
+          'Minestrone',
+          'Hubová polievka',
+          'Brokolicová krémová polievka'
+        ],
+        salads: [
+          'Zeleninový šalát',
+          'Ťapaný šalát',
+          'Cézar šalát',
+          'Grécky šalát',
+          'Šalát s tuniakom',
+          'Šalát Caprese',
+          'Quinoa šalát s avokádom',
+          'Ovocný šalát',
+          'Šalát s pečenou cviklou',
+          'Coleslaw',
+          'Kurací šalát s jogurtovou zálievkou',
+          'Šalát s kozím syrom a orechmi'
+        ]
+      }
     },
     
     // Contact page
@@ -144,7 +193,56 @@ export const translations = {
         vegan: 'Vegan',
         glutenFree: 'Gluten-free'
       },
-      portion: 'ml'
+      portion: 'ml',
+      meals: {
+        mainDishes: [
+          'Grilled chicken breast with rice',
+          'Beef goulash with dumpling',
+          'Fried cheese with fries',
+          'Roast duck with potato pancakes',
+          'Tofu with quinoa and vegetables',
+          'Pork schnitzel with boiled potatoes',
+          'Chicken perkelt with dumplings',
+          'Lasagne bolognese',
+          'Baked salmon with broccoli',
+          'Spinach gnocchi with tomato sauce',
+          'Beef steak with roasted potatoes',
+          'Chicken salad with Caesar dressing',
+          'Vegetable curry with basmati rice',
+          'Penne carbonara',
+          'Turkey breast in mushroom sauce'
+        ],
+        soups: [
+          'Bean soup with pasta',
+          'Vegetable soup',
+          'Goulash soup',
+          'Potato soup',
+          'Chicken broth with noodles',
+          'Lentil soup',
+          'Sauerkraut soup',
+          'Tomato soup',
+          'Pea soup with sausage',
+          'Kulajda',
+          'Garlic soup',
+          'Minestrone',
+          'Mushroom soup',
+          'Broccoli cream soup'
+        ],
+        salads: [
+          'Vegetable salad',
+          'Chopped salad',
+          'Caesar salad',
+          'Greek salad',
+          'Tuna salad',
+          'Caprese salad',
+          'Quinoa salad with avocado',
+          'Fruit salad',
+          'Salad with roasted beets',
+          'Coleslaw',
+          'Chicken salad with yogurt dressing',
+          'Salad with goat cheese and nuts'
+        ]
+      }
     },
     
     // Contact page
