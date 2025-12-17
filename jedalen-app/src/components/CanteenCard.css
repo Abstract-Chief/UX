@@ -34,11 +34,12 @@
 
 .card-content {
   position: absolute;
-  bottom: 0;
+  top: 0;
+  height: 100%;
   left: 0;
   right: 0;
   padding: 1.25rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+  background: rgba(153, 153, 153, 0.1);
   z-index: 1;
 }
 
@@ -51,9 +52,10 @@
 }
 
 .canteen-name {
-  font-size: 1.125rem;
+  font-size: 1.825rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #363636;
+  font-family: "Roboto Slab", serif;
   margin: 0;
 }
 
@@ -61,6 +63,7 @@
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
   font-size: 0.75rem;
+  margin-top: 10px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -82,8 +85,10 @@
 
 .opening-hours {
   font-size: 0.875rem;
-  color: #e5e7eb;
-  margin: 0 0 0.5rem 0;
+  font-family: "Roboto Slab", serif;
+  color: #474747;
+  font-weight: bold;
+  margin-top: -1rem;
 }
 
 .meals-info {
