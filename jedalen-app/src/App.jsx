@@ -1,22 +1,15 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import WeekSelector from './components/WeekSelector'
-import CanteenGrid from './components/CanteenGrid'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Kontakt from './pages/Kontakt'
 import './App.css'
 
 function App() {
-  const [selectedDay, setSelectedDay] = useState({
-    name: 'Utorok',
-    date: '25.11.2025'
-  });
-
   return (
     <div className="app">
-      <Header />
-      <main className="main-content">
-        <WeekSelector selectedDay={selectedDay} onDayChange={setSelectedDay} />
-        <CanteenGrid selectedDay={selectedDay} />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+      </Routes>
     </div>
   )
 }

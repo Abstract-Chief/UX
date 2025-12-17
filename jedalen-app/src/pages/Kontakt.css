@@ -1,0 +1,57 @@
+.kontakt-page {
+  min-height: 100vh;
+  background: #FFF8EB;
+}
+
+.kontakt-content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kontakt-container {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 40px;
+  align-items: start;
+  justify-content: center;
+}
+
+.contacts-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .kontakt-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contacts-section {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .form-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .kontakt-content {
+    padding: 24px 16px;
+  }
+
+  .kontakt-container {
+    gap: 20px;
+  }
+}
