@@ -89,7 +89,9 @@ const Menu = () => {
       <header className="menu-header">
         <div className="menu-header-container">
           <Link to="/" className="menu-logo">
-            <div className="menu-logo-icon">🍽️</div>
+            <div className="menu-logo-icon">
+              <img src="/img/logo.png" alt="TUKE Logo" />
+            </div>
             <span className="menu-logo-text">Jedáleň Němcovej 1</span>
           </Link>
           
@@ -102,8 +104,8 @@ const Menu = () => {
           </nav>
         </div>
       </header>
-      
       <div className="menu-hero">
+        <hr/>
         <div className="menu-hero-content">
           <div className="menu-title-section">
             <h1 className="menu-title">{t.menu.title}</h1>
@@ -148,7 +150,6 @@ const Menu = () => {
             >
               {t.menu.categories.salads}
             </button>
-            <button className="category-tab-arrow">→</button>
           </div>
           
           <div className="menu-day-selector-mobile">
@@ -163,21 +164,6 @@ const Menu = () => {
                 ))}
               </select>
             </div>
-          </div>
-          
-          <div className="menu-filters">
-            <button 
-              className={`filter-btn ${showVegan ? 'active' : ''}`}
-              onClick={() => setShowVegan(!showVegan)}
-            >
-              🌱 {t.menu.filters.vegan}
-            </button>
-            <button 
-              className={`filter-btn ${showGlutenFree ? 'active' : ''}`}
-              onClick={() => setShowGlutenFree(!showGlutenFree)}
-            >
-              🌾 {t.menu.filters.glutenFree}
-            </button>
           </div>
         </div>
       </div>
