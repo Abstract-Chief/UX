@@ -32,6 +32,22 @@ export const translations = {
       meals: 'jedlá'
     },
     
+    // Menu page
+    menu: {
+      title: 'Jedálny lístok',
+      selectDay: 'Vyber si svoj deň',
+      categories: {
+        mainDishes: 'Hlavné jedlá',
+        soups: 'Polievky',
+        salads: 'Šaláty'
+      },
+      filters: {
+        vegan: 'Vegan',
+        glutenFree: 'Bez lepku'
+      },
+      portion: 'ml'
+    },
+    
     // Contact page
     contact: {
       title: 'Kontakt',
@@ -113,6 +129,22 @@ export const translations = {
         opening_soon: 'Opening soon'
       },
       meals: 'meals'
+    },
+    
+    // Menu page
+    menu: {
+      title: 'Menu',
+      selectDay: 'Select your day',
+      categories: {
+        mainDishes: 'Main dishes',
+        soups: 'Soups',
+        salads: 'Salads'
+      },
+      filters: {
+        vegan: 'Vegan',
+        glutenFree: 'Gluten-free'
+      },
+      portion: 'ml'
     },
     
     // Contact page
