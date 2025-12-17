@@ -44,7 +44,7 @@ const generateMeals = (category, count, mealNames) => {
 
 const Menu = () => {
   const { canteenId } = useParams();
-  const { language } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
   
   const [selectedCategory, setSelectedCategory] = useState('mainDishes');
@@ -101,7 +101,7 @@ const Menu = () => {
           <nav className="menu-nav">
             <Link to="/alergeny" className="menu-nav-link">{t.nav.allergens}</Link>
             <Link to="/kontakt" className="menu-nav-link">{t.nav.contact}</Link>
-            <div className="menu-language-selector">
+            <div className="menu-language-selector" onClick={toggleLanguage} style={{ cursor: 'pointer' }}>
               <span>{language.toUpperCase()} ▼</span>
             </div>
           </nav>
